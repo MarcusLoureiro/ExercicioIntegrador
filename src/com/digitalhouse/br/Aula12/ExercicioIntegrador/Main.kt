@@ -4,12 +4,17 @@ import java.util.Scanner
 
 fun main() {
     val scanner = Scanner(System.`in`)
+
+    val livraria = Livraria()
+
     do {
         println("\nOlá! Digite a opção desejada:")
         println("(1) Cadastrar livro")
         println("(2) Cadastrar coleção")
         println("(3) Consultar livro")
-        println("(4) Efetuar venda")
+        println("(4) Consultar coleção")
+        println("(5) Efetuar venda de livro")
+        println("(6) Efetuar venda de coleção")
         println("(0) Sair")
 
         val input = scanner.nextInt()
@@ -32,7 +37,7 @@ fun main() {
                 val preco = scanner.nextDouble()
 
                 val livro = Livro(codigo, titulo, autor, ano, 10, preco.toDouble())
-                livro.cadastrarLivro(livro)
+                livraria.cadastrarLivro(livro)
             }
             2 -> {
                 println("\nDigite o código da coleção:")
@@ -47,11 +52,11 @@ fun main() {
                 println("\nDigite o código do livro a ser adicionado na coleção:")
                 val codigoLivro = scanner.nextInt()
 
-                
             }
             3 -> {
                 println("Digite o código do livro que deseja procurar:")
-
+                val codLivro = scanner.nextInt()
+                livraria.consultarLivro(codLivro)
             }
             4 -> {
 
