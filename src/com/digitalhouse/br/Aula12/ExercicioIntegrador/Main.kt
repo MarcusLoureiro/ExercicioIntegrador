@@ -6,7 +6,7 @@ fun main() {
     val scanner = Scanner(System.`in`)
 
     val livraria = Livraria()
-
+//TEste
     do {
         println("---------- Menu Principal ----------")
         println("Olá! Digite a opção desejada:")
