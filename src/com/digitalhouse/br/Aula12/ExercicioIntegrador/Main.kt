@@ -69,7 +69,9 @@ fun main() {
                     val resposta = readLine()!!
                 } while (resposta == "S" || resposta == "s")
 
-                val colecao = Colecao(codigoColecao, preco, descricao, listaLivros)
+                println("Digite a quantidade em estoque:")
+                val qtdEstoqueColecao = scanner.nextInt()
+                val colecao = Colecao(codigoColecao, preco, descricao, listaLivros, qtdEstoqueColecao)
                 livraria.cadastrarColecao(colecao)
 
             }
@@ -96,7 +98,7 @@ fun main() {
                     if ( retorno == null) {
                         println("Coleção não encontrada!\n")
                     } else {
-                        println("Coleção código: ${retorno.codigo} | Preço: ${retorno.preco} | Descricao: ${retorno.descricao}")
+                        println("Coleção código: ${retorno.codigo} | Preço: ${retorno.preco} | Descricao: ${retorno.descricao} | Estoque: ${retorno.qtdEstoque}")
                         for (item in retorno.listaLivrosColecao){
                             println("Itens da coleção:")
                             println("Código: ${item.codigo} | Título: ${item.titulo} | Autor: ${item.autor} | Ano de lançamento: ${item.anoLancamento} | Quantidade em estoque: ${item.qtdEstoque} | Preço: ${item.preco}\n")
